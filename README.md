@@ -1,1 +1,1 @@
-This is fun discoed bot from friends
+This is fun discoed bot for friends
