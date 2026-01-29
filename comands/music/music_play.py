@@ -1,6 +1,6 @@
 import discord 
 from . import music_core
-import config_id
+import config.config_id as config_id
 
 ALLOWED_CHANNELS = {
     config_id.id_elf_fm_channel,

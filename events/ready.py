@@ -1,5 +1,4 @@
 import discord
-import config
 from moduls.new_day.play_new_day import daily_task
 
 async def handle_ready(bot):

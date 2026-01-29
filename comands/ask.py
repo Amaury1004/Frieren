@@ -1,6 +1,6 @@
 # commands/ask.py
 from discord import app_commands, Interaction
-import config
+from config import config_id
 
 
 def register(tree: app_commands.CommandTree):
@@ -9,7 +9,7 @@ def register(tree: app_commands.CommandTree):
     @app_commands.describe(question="Твоє питання для бота")
     async def ask_command(interaction: Interaction, question: str):
 
-        if interaction.channel_id == config.id_cats_channel:
+        if interaction.channel_id == config_id.id_cats_channel:
             await interaction.response.send_message(
                 "❌ Цю команду не можна використовувати в каналі #cats",
                 ephemeral=True

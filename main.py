@@ -1,5 +1,5 @@
 # main.py
-import config
+from config import config
 from core.bot import MyBot
 
 # handlers (логика)
@@ -48,4 +48,4 @@ music_play.register(bot.tree)
 
 # ================= RUN =================
 
-bot.run(config.TOKEN)
+bot.run(config.Discord_Token)

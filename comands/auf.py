@@ -10,7 +10,7 @@ class Wolf:
 import discord
 from discord import app_commands, Interaction
 
-import config
+from config import config_id
 
 
 def register(tree: app_commands.CommandTree):
@@ -18,7 +18,7 @@ def register(tree: app_commands.CommandTree):
     @tree.command(name="auf", description="Отримати auf 🐺")
     async def auf_command(interaction: Interaction):
 
-        if interaction.channel_id == config.id_cats_channel:
+        if interaction.channel_id == config_id.id_cats_channel:
             await interaction.response.send_message(
                 "❌ Цю команду не можна використовувати тут",
                 ephemeral=True

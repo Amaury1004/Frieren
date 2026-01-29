@@ -5,7 +5,7 @@ from datetime import datetime
 from core.bot import MyBot
 
 
-import config_id
+import config.config_id as config_id
 
 async def play_new_day(vc: discord.VoiceClient):
     source = discord.FFmpegPCMAudio(
@@ -39,7 +39,7 @@ async def daily_task():
     tz = pytz.timezone("Europe/Kiev")
     now = datetime.now(tz)
     # проверяем, что время 00:00
-    if now.hour == 14 and now.minute == 29:
+    if now.hour == 00 and now.minute == 00:
         bot = daily_task.bot  # ссылка на бот
         await join_and_play(bot, config_id.id_voice_general)
         await send_daily_message(bot)

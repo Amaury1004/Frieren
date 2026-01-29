@@ -1,12 +1,12 @@
 import discord
-import config
+from config import config_id
 
 def register(tree):
     
     @tree.command(name="new_day", description="Богиня відвідає тебе...і повідомить про новий день ")
     async def good_boy_command(interaction: discord.Interaction):
 
-        if interaction.channel_id == config.id_cats_channel:
+        if interaction.channel_id == config_id.id_cats_channel:
             await interaction.response.send_message(
                 "❌ Цю команду не можна використовувати тут",
                 ephemeral=True
