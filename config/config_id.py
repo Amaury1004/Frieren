@@ -8,6 +8,7 @@ id_cats_channel = 1462926860529959156  # ID каналу для котиків
 ID_WELCOME_CHANNEL = 1463138030876627047  # ID каналу для привітань
 id_elf_fm_channel = 1406769714516197468  # ID каналу для ельфійки FM
 id_elf_poligon_chanel = 1462858366391943179  # ID каналу для тестів ельфійки
+id_minecraft_chat_channel = 1466413524829081714  # ID каналу для чату Minecraft
 
 #Voice Channel IDs
 

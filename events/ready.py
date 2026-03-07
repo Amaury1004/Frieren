@@ -20,5 +20,5 @@ async def handle_ready(bot):
     #embed.set_footer(text="Обери свою роль нижче ✨")
 
     await bot.change_presence(
-        activity=discord.Game(name="У любові з Максимом 💜")
+        activity=discord.Game(name="Шукає фоліанти")
     )

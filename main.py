@@ -11,24 +11,23 @@ from events.reactions import (
     handle_reaction_remove
 )
 # commands
-from comands import info, ask, auf, gacha_cat, good_boy
+from comands import info, ask, auf, gacha_cat, good_boy, roll
+from comands.LookingWork import look_work
 from comands.music import music_play
+from comands.GamblingRoles import gambling_roles
 
 bot = MyBot()
 
 # ================= EVENTS =================
 
-
 OnMessageEvent(bot)
 @bot.event
 async def on_ready():
     await handle_ready(bot)
-
-
+    
 @bot.event
 async def on_raw_reaction_add(payload):
     await handle_reaction_add(bot, payload)
-
 
 @bot.event
 async def on_raw_reaction_remove(payload):
@@ -44,6 +43,9 @@ auf.register(bot.tree)
 gacha_cat.register(bot.tree)
 good_boy.register(bot.tree)
 music_play.register(bot.tree)
+look_work.register(bot.tree)
+roll.register(bot.tree)
+gambling_roles.register(bot.tree)
 
 
 # ================= RUN =================
