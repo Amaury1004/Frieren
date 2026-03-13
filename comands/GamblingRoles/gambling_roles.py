@@ -4,8 +4,6 @@ import discord
 import os
 import textwrap
 
-
-
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 
@@ -136,7 +134,7 @@ def register(tree: app_commands.CommandTree):
         # --- Функция выбора текста ---
         def get_answer(user_id, category):
             answers = gambling_config.user_answers.get(category, {})
-            use_default = random.random() < 0.2
+            use_default = random.random() < 0.15  # 15% шанс использовать дефолтные ответы
             if use_default:
                 pool = answers.get("default", ["Тут немає відповіді"])
             else:
@@ -155,8 +153,10 @@ def register(tree: app_commands.CommandTree):
         toxic_file = discord.File("toxic_result.png")
 
         await interaction.followup.send(
-            f"🎲 Результати ролу:\n"
-            f"💪 Імба: <@{imba}>\n"
+            f"💪 Імба: <@{imba}>\n",
+            file=imba_file
+        ) 
+        await interaction.followup.send(
             f"☠️ Токсик: <@{toxic}>",
-            files=[imba_file, toxic_file]
+            file=toxic_file
         )

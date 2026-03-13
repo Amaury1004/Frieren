@@ -1,7 +1,7 @@
 import json
 import os
 
-FILE_PATH = "comands/GamblingRoles/UsersInGamblinng.json"
+FILE_PATH = "database/UsersInGamblinng.json"
 
 def save_data(data):
     with open(FILE_PATH, "w", encoding="utf-8") as f:

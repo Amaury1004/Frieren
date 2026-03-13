@@ -28,4 +28,5 @@ async def ping_user_after(member, voice_channel, delay, bot):
     if member.id in [m.id for m in voice_channel.members]:
         text_channel = bot.get_channel(TEXT_CHANNEL_ID)
         if text_channel:
-            await text_channel.send(f"{member.mention}, ти вже {delay} годин в каналі {voice_channel.name}! Навіть я стільки не сиджу над фоліантами!")
+            print()
+           #await text_channel.send(f"{member.mention}, ти вже {delay} годин в каналі {voice_channel.name}! Навіть я стільки не сиджу над фоліантами!")

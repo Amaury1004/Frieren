@@ -54,7 +54,7 @@ async def send_weekly_message(self, channel_id: int = config_id.id_main_chat_cha
     wish_on_weekly = random.choice(wish_list_weekly)
 
     if channel:
-        await channel.send("Аааааа, Иииииии, а я ще і розробці, Ня пока")
+        await channel.send("Аааааа, Иииииии, а я ще в розробці, Ня пока")
 
 
 @tasks.loop(minutes=1)

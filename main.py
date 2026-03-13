@@ -5,11 +5,12 @@ from core.bot import MyBot
 # handlers (логика)
 from events.ready import handle_ready
 from events import voice_ping
-from events.ping_message import OnMessageEvent
+from events.ping_message.ping_message import OnMessageEvent
 from events.reactions import (
     handle_reaction_add, 
     handle_reaction_remove
 )
+
 # commands
 from comands import info, ask, auf, gacha_cat, good_boy, roll
 from comands.LookingWork import look_work

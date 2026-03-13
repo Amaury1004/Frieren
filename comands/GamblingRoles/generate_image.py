@@ -27,19 +27,16 @@ def create_card(template_path, avatar_url, text, output_path, name):
     draw_mask.ellipse((0, 0, 440, 440), fill=255)
     avatar.putalpha(mask)
 
-    avatar_x = 310
-    avatar_y = 330
+    avatar_x = 280
+    avatar_y = 320
 
-    # координаты аватара (подгони под шаблон)
+    # координаты аватара 
     img.paste(avatar, (avatar_x, avatar_y), avatar)
 
     draw = ImageDraw.Draw(img)
     font_size = 55
     font = ImageFont.truetype(font_path, font_size)
     name_font = ImageFont.truetype(font_path, 70)
-
-    
-
 
     bbox = draw.textbbox((0, 0), name, font=name_font)
     name_width = bbox[2] - bbox[0]

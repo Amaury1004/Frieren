@@ -8,6 +8,7 @@ class OnMessageEvent:
         self.bot = bot
         self.register()
 
+
     def register(self):
         @self.bot.event
         async def on_message(message: discord.Message):
@@ -20,8 +21,8 @@ class OnMessageEvent:
                 username = message.author.display_name
                 response = user_answers.get(message.author.id, None)
 
-                if response:
-                        await message.channel.send(random.choice(response))
+                #if response:
+                #       await message.channel.send(random.choice(response))
 
-                else:
-                    await message.channel.send(random.choice(default_answers).format(username))
+                #else:
+                #    await message.channel.send(random.choice(default_answers).format(username))

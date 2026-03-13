@@ -25,3 +25,6 @@ Thumbs.db
 # Bot token file
 config.py
 token.py
+
+# Database files
+*.db

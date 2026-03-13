@@ -34,4 +34,6 @@ ROLES = {
     cyber_kotletka: 1463170265398906880,
 }
 
+#Users 
+id_owner = 376510092394102804
 
