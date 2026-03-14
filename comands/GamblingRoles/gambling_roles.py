@@ -1,11 +1,6 @@
 import random
-import requests
 import discord
-import os
-import textwrap
-
-from PIL import Image, ImageDraw, ImageFont
-from io import BytesIO
+import json
 
 from datetime import date
 from discord import app_commands, Interaction
@@ -99,10 +94,24 @@ def register(tree: app_commands.CommandTree):
         # Делаем defer для долгих операций (аватарки, картинки)
         await interaction.response.defer()
 
+        
         # Выбираем игроков
+
         imba = random.choice(data["userList"])
         toxic = random.choice([u for u in data["userList"] if u != imba])
 
+        # Сохраняем результаты в JSON для подсчета сколько раз кто-то был имбой и токсиком.
+        with open("database/UsersInGamblinng.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        if imba not in data["counterImba"]:
+            data["counterImba"][imba] = 0
+
+        if toxic not in data["counterToxic"]:
+            data["counterToxic"][toxic] = 0
+        data["counterImba"][imba] += 1
+
+        data["counterToxic"][toxic] += 1
         # Сохраняем выбор, чтобы потом можно было показать в следующий раз
         data["lastSpinDate"] = str(kyiv_time)
         data["imba"] = imba

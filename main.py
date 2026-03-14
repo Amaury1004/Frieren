@@ -12,10 +12,10 @@ from events.reactions import (
 )
 
 # commands
-from comands import info, ask, auf, gacha_cat, good_boy, roll
+from comands import info, ask, auf, gacha_cat, good_boy, roll, google
 from comands.LookingWork import look_work
 from comands.music import music_play
-from comands.GamblingRoles import gambling_roles
+from comands.GamblingRoles import gambling_roles, gambling_list
 
 bot = MyBot()
 
@@ -41,12 +41,14 @@ voice_ping.setup_voice_ping(bot)
 info.register(bot.tree)
 ask.register(bot.tree)
 auf.register(bot.tree)
+google.register(bot.tree)
 gacha_cat.register(bot.tree)
 good_boy.register(bot.tree)
 music_play.register(bot.tree)
 look_work.register(bot.tree)
 roll.register(bot.tree)
 gambling_roles.register(bot.tree)
+gambling_list.register(bot.tree)
 
 
 # ================= RUN =================
